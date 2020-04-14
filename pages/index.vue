@@ -15,8 +15,6 @@
             <div class="section-intro">
               <div class="section-text">
                 Web（デザインとコーディング）制作の記録です。
-                <br class="pc">
-                デザイン練習用のサイト。
               </div>
             </div>
           </div>
@@ -43,15 +41,6 @@
             <div class="card">
               <a href="img/works/game.jpg" data-size="960x720" class="card-image hover-action-01">
                 <img class="lazyload fadein" src="img/placeholder4x3.png" data-src="img/works/game.jpg" alt="" />
-              </a>
-              <div class="card-caption">
-                <div class="card-caption-title">サイト名が入る</div>
-                <div class="card-caption-info">Design</div>
-              </div>
-            </div>
-            <div class="card">
-              <a href="img/works/fashion.jpg" data-size="960x720" class="card-image hover-action-01">
-                <img class="lazyload fadein" src="img/placeholder4x3.png" data-src="img/works/fashion.jpg" alt="" />
               </a>
               <div class="card-caption">
                 <div class="card-caption-title">サイト名が入る</div>

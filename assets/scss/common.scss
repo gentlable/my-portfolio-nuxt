@@ -132,27 +132,27 @@ li {
 /*--------------------------------
 ヘッダー
 ---------------------------------*/
-#header {
+.hero {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 86vh;
 }
 
-#header .logo {
+.hero .logo {
   position: relative;
   margin-bottom: 30px;
   text-align: center;
 }
 
-#header .logo-title {
+.hero .logo-title {
   font-family: "Open sans", sans-serif;
   font-size: 64px;
   line-height: 1;
   letter-spacing: .2em;
 }
 
-#header .logo-desc {
+.hero .logo-desc {
   font-size: 20px;
   margin-top: 5px;
   text-align: center;
@@ -521,16 +521,16 @@ li {
     padding-top: 82px;
   }
 
-  #header {
+  .hero {
     height: 70vh;
   }
 
-  #header .logo-title {
+  .hero .logo-title {
     font-size: 28px;
     letter-spacing: .16em;
   }
 
-  #header .logo-desc {
+  .hero .logo-desc {
     font-size: 11px;
   }
 
