@@ -14,7 +14,7 @@
     <hero />
     <sub-title />
     <div class="button">
-      <button class="btn" type="button" name="button">GA用タグ</button>      
+      <button class="btn" type="button" name="button" onClick="ga('send', 'event', 'sp', 'tel', 'test');">GA用タグ</button>      
     </div>
   </div>
 </template>

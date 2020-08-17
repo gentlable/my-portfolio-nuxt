@@ -1,3 +1,6 @@
+const gtagSrc = 'https://www.googletagmanager.com/gtag/js?id=UA-165351964-2'
+const gtagJS = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-165351964-2');`
+
 export default {
   mode: 'universal',
   /*
@@ -14,7 +17,21 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    script: [
+      {
+        hid: 'gtagJS',
+        innerHTML: gtagJS
+      },
+      {
+        hid: 'gtagSrc',
+        src: gtagSrc
+      }
+    ],
+    __dangerouslyDisableSanitizersByTagID: {
+    'gtagJS': ['innerHTML'],
+    'gtagSrc': ['innerHTML']
+    }
   },
   /*
    ** Customize the progress-bar color
