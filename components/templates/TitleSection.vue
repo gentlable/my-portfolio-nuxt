@@ -15,7 +15,7 @@
     <sub-title />
     <div class="button">
       <a href="#">
-        <button class="btn" type="button" name="button" onClick="gtag('send', 'event', 'sp', 'tel', 'test');">GAテスト用ボタン</button>
+        <button class="btn" type="button" name="button" onClick="gtag('event', 'アクション', {'event_category': 'カテゴリ','event_label': 'ラベル'});">GAテスト用ボタン</button>
       </a>
     </div>
   </div>
