@@ -13,6 +13,9 @@
     </div>
     <hero />
     <sub-title />
+    <div class="button">
+      <button class="btn" type="button" name="button">GA用タグ</button>      
+    </div>
   </div>
 </template>
 

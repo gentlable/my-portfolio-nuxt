@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <h1>SHINGO HIROMI</h1>
+    <h1>TANAKA KAZUKI</h1>
   </div>
 </template>
 
