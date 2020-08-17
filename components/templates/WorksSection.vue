@@ -22,7 +22,7 @@
 <script>
 import SectionTitle from '~/components/atoms/text/SectionTitle.vue'
 import Description from '~/components/atoms/text/Description.vue'
-import Work from '~/components/atoms/card/work.vue'
+import Work from '~/components/atoms/card/Work.vue'
 import xfaceImg from '~/assets/img/works/top_pc.jpg'
 import connectImg from '~/assets/img/works/connect.png'
 
