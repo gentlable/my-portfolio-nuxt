@@ -3,8 +3,10 @@
     <div class="image">
       <img :src="image_url" alt="">
     </div>
-    <p class="label">{{ label }}</p>
-    <p class="desc">{{ desc }}</p>
+    <div class="">
+      <p class="label">{{ label }}</p>
+      <p class="desc">{{ desc }}</p>
+    </div>
   </div>
 </template>
 

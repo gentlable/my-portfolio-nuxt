@@ -17,7 +17,8 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    /*
     script: [
       {
         hid: 'gtagJS',
@@ -32,6 +33,7 @@ export default {
     'gtagJS': ['innerHTML'],
     'gtagSrc': ['innerHTML']
     }
+    */
   },
   /*
    ** Customize the progress-bar color
@@ -66,7 +68,8 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/google-analytics'
   ],
   /*
    ** Axios module configuration
@@ -81,16 +84,11 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
-  }
-}
-module.exports = {
-  modules: ['@nuxtjs/style-resources'],
-  styleResources: {
-   scss: [
-    '~/assets/scss/common.scss'
-    ]
   },
   styleResources: {
     scss: ['~/assets/scss/common.scss']
   },
+  googleAnalytics: {
+    id: 'UA-165351964-2'
+  }
 }
