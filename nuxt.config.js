@@ -1,7 +1,14 @@
 const gtagSrc = 'https://www.googletagmanager.com/gtag/js?id=UA-165351964-2'
 const gtagJS = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-165351964-2');`
+const { microCmsApiKey, microCmsApiDomain } = process.env
+import { routing } from './lib/cms'
+
 
 export default {
+  env: {
+    microCmsApiKey,
+    microCmsApiDomain
+  },
   mode: 'universal',
   /*
    ** Headers of the page
@@ -18,22 +25,6 @@ export default {
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-    /*
-    script: [
-      {
-        hid: 'gtagJS',
-        innerHTML: gtagJS
-      },
-      {
-        hid: 'gtagSrc',
-        src: gtagSrc
-      }
-    ],
-    __dangerouslyDisableSanitizersByTagID: {
-    'gtagJS': ['innerHTML'],
-    'gtagSrc': ['innerHTML']
-    }
-    */
   },
   /*
    ** Customize the progress-bar color
@@ -44,7 +35,8 @@ export default {
    */
   css: [
     { src: '~assets/scss/common.scss', lang: 'scss' },
-    { src: '~assets/scss/reset.scss', lang: 'scss' }
+    { src: '~assets/scss/reset.scss', lang: 'scss' },
+    { src: '~assets/scss/add.scss', lang: 'scss' }
   ],
   /*
    ** Plugins to load before mounting the App
@@ -83,7 +75,11 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.node = {
+        fs: 'empty'
+      }
+    }
   },
   styleResources: {
     scss: ['~/assets/scss/common.scss']
