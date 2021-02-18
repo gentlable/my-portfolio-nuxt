@@ -1,10 +1,5 @@
 <template>
   <div>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-      crossorigin="anonymous">
-    </script>
     <nuxt />
   </div>
 </template>
@@ -20,6 +15,14 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+}
+
+a {
+  color: black !important;
 }
 
 *,
@@ -56,5 +59,9 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.row {
+  margin: 0;
 }
 </style>

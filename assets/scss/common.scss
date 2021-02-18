@@ -670,6 +670,11 @@ li {
 }
 
 @font-face {
-  font-family: '8bitFont';
-  src: url('~assets/font/FAMania2.6.TTF') format("truetype");
+  font-family: '8bitFontJp';
+  src: url('~assets/font/PIXELMPLUS12-REGULAR.TTF') format("truetype");
+}
+
+@font-face {
+  font-family: '8bitFontEn';
+  src: url('~assets/font/HACHEA_.TTF') format("truetype");
 }

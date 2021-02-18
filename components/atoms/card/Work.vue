@@ -1,9 +1,11 @@
 <template>
   <div class="work card">
     <div class="image">
-      <img :src="image_url" alt="">
+      <a :href="link">
+        <img :src="image_url" alt="">
+      </a>
     </div>
-    <div class="">
+    <div class="description">
       <p class="label">{{ label }}</p>
       <p class="desc">{{ desc }}</p>
     </div>
@@ -21,6 +23,10 @@ export default {
       default: '',
       type: String
     },
+    link: {
+      default: '',
+      type: String
+    },
     desc: {
       default: '',
       type: String
@@ -34,15 +40,17 @@ export default {
   font-size: 1rem;
   align-items: center;
   text-align: center;
-  height: 500px;
-}
-
-.image {
-  height: 60%;
-  img {
-    height: 100%;
-    width: auto;
-    margin: auto;
+  height: 400px;
+  .image {
+    height: 80%;
+    img {
+      height: 100%;
+      width: auto;
+      margin: auto;
+    }
+  }
+  .description {
+    margin-top: 1rem;
   }
 }
 </style>

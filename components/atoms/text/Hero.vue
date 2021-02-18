@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <h1>TANAKA KAZUKI</h1>
+    <h1>Go's portfolio</h1>
   </div>
 </template>
 
@@ -13,11 +13,28 @@ export default class ApplicantTab extends Vue {
 
 <style lang="scss" scoped>
 .hero {
-  font-size: 4rem;
-  padding-top: 40vh;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  letter-spacing: .2em;
+  h1 {
+    color: white;
+    font-family: '8bitFontEn';
+    font-size: 4rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 768px) {
+.hero {
+  h1 {
+    font-size: 4rem;
+  }
+}
+}
+@media screen and (max-width: 768px) {
+.hero {
+  h1 {
+    font-size: 2rem;
+  }
+}
 }
 </style>

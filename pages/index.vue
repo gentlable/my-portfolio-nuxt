@@ -1,15 +1,23 @@
 <template>
-  <div>
-    <title-section />
+  <div class="index">
     <!--
-    <works-section />
-    <about-section />
-    <test-section />
+    <header-section class="header" /> 
+    -->
+    <title-section class="title" />
+    <!--
+    <about-section class="about" />
+    <works-section class="works" />
+    -->
+    <!--
+    <contact-section class="contact" />
+    -->
+    <!--
+    <footer-section class="footer" />
     -->
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import TitleSection from '~/components/templates/TitleSection.vue'
 import WorksSection from '~/components/templates/WorksSection.vue'
 import AboutSection from '~/components/templates/AboutSection.vue'
@@ -20,8 +28,8 @@ export default {
   components: {
     TitleSection,
     WorksSection,
-    TestSection,
-    AboutSection
+    AboutSection,
+    TestSection
   }
 }
 </script>

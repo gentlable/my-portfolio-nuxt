@@ -2,6 +2,7 @@ const gtagSrc = 'https://www.googletagmanager.com/gtag/js?id=UA-165351964-2'
 const gtagJS = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-165351964-2');`
 const { microCmsApiKey, microCmsApiDomain } = process.env
 import { routing } from './lib/cms'
+import webpack from 'webpack'
 
 
 export default {
@@ -10,6 +11,7 @@ export default {
     microCmsApiDomain
   },
   mode: 'universal',
+//  mode: 'spa',
   /*
    ** Headers of the page
    */
@@ -24,7 +26,21 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      // {
+      //   src: 'https://code.jquery.com/jquery-3.5.1.min.js',
+      //   integrity: 'sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=',
+      //   crossorigin: 'anonymous'
+      // },
+      {
+        src: 'https://code.jquery.com/jquery-3.5.1.slim.min.js',
+        integrity: 'sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=',
+        crossorigin: 'anonymous'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -36,12 +52,14 @@ export default {
   css: [
     { src: '~assets/scss/common.scss', lang: 'scss' },
     { src: '~assets/scss/reset.scss', lang: 'scss' },
-    { src: '~assets/scss/add.scss', lang: 'scss' }
+    { src: '~assets/scss/add.scss', lang: 'scss' },
+    { src: '~assets/scss/neumorphism.css', lang: 'scss' }
   ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -79,10 +97,13 @@ export default {
       config.node = {
         fs: 'empty'
       }
-    }
-  },
-  styleResources: {
-    scss: ['~/assets/scss/common.scss']
+    },
+    plugins: [
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery'
+      })
+    ]
   },
   googleAnalytics: {
     id: 'UA-165351964-2'
