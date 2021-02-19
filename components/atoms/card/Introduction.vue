@@ -1,6 +1,9 @@
 <template>
   <div class="introduction row">
-    <div class="description col-6">
+    <div class="image col">
+      <img :src="image_url" alt="">
+    </div>
+    <div class="description col">
       <div class="row">
         <div class="label col">
           {{ label1 }}
@@ -17,9 +20,6 @@
           {{ desc2 }}
         </div>
       </div>
-    </div>
-    <div class="image col-6">
-      <img :src="image_url" alt="">
     </div>
   </div>
 </template>
@@ -55,7 +55,8 @@ export default {
 .introduction {
   align-items: center;
   text-align: center;
-  height: 60%;;
+  height: 60%;
+  flex-direction: row-reverse;
   .image {
     height: 80%;
     vertical-align: middle;
@@ -86,9 +87,40 @@ export default {
   }
 }
 @media screen and (min-width: 768px) {
-  
+.introduction {
+  .image {
+    img {
+    }
+  }
+  .description {
+    .row {
+      .label {
+      }
+      .desc {
+      }
+    }
+  }
+}
 }
 @media screen and (max-width: 768px) {
-  
+.introduction {
+  height: 63%;
+  .image {
+    height: 50%;
+    img {
+      height: 80%;
+    }
+  }
+  .description {
+    font-size: 2rem;
+    .row {
+      margin: 0;
+      .label {
+      }
+      .desc {
+      }
+    }
+  }
+}
 }
 </style>

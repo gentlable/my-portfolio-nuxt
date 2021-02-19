@@ -50,7 +50,6 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 1180px;
   margin: auto;
   .window {
     border-radius: 5px;
@@ -88,28 +87,45 @@ export default {
 
 @media screen and (min-width: 768px) {
 .about-section {
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  width: 1180px;
+  .outside {
+    width: 95%;
+    height: 94%;
+    margin: 3% 2.5%;
+    .inside {
+      .message {
+      }
+    }
+  }
   .section-title {
-    padding-top: 1rem;
   }
   .introduction {
-    width: 80%;
-    margin: auto;
-    margin-top: 3rem;
-    background: inherit;
   }
 }
 }
 
 @media screen and (max-width: 768px) {
 .about-section {
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  .outside {
+    width: 95%;
+    height: 94%;
+    margin: 6% 2.5%;
+    .inside {
+      width: 98%;
+      height: 30%;
+      margin: auto;
+      .message {
+        font-family: '8bitFontEn';
+        font-size: 1.5rem;
+        padding: 5px 15px;
+        line-height: 2.5rem;
+      }
+    }
+  }
+  .section-title {
+  }
   .introduction {
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-top: 3rem;
     background: inherit;
