@@ -17,7 +17,7 @@
         <div class="message">
           * Howdy!<br>
           * I'm Go!<br>
-          * Welcome My Page!
+          * Welcome My portfolio site!
         </div>
       </div>
     </div>
