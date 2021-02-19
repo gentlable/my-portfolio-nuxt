@@ -17,7 +17,8 @@ export default {
 
 <style lang="scss" scoped>
 .description {
-  font-size: 1rem;
+  font-family: '8bitFontEn';
+  font-size: 2.5rem;
   align-items: center;
   justify-content: center;
   text-align: center;

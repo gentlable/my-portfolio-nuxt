@@ -1,6 +1,6 @@
 <template>
   <div class="title-section">
-    <hero class="hero"/>
+    <hero class="black"/>
   </div>
 </template>
 
@@ -20,9 +20,12 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("/img/firstview_edited.png");
+  background-image: url("/img/firstview_edited-min.png");
   background-repeat: no-repeat;
   background-size: cover;
+  .hero {
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 768px) {

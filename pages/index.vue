@@ -1,18 +1,18 @@
 <template>
   <div class="index">
     <!--
-    <header-section class="header" /> 
+    <header-section /> 
     -->
-    <title-section class="title" />
+    <title-section />
+    <about-section />
     <!--
-    <about-section class="about" />
-    <works-section class="works" />
-    -->
-    <!--
-    <contact-section class="contact" />
+    <works-section />
     -->
     <!--
-    <footer-section class="footer" />
+    <contact-section />
+    -->
+    <!--
+    <footer-section />
     -->
   </div>
 </template>

@@ -1,11 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
 
-.main {
-  width: 1200px;
-  margin: auto;
+.white > * {
+  color: black !important;
 }
 
-pre {
+.black > * {
+  color: white !important;
+}
+
+.bg-white > * {
+  background-color: white;
+  color: black !important;
+}
+
+.bg-black > * {
   background-color: black;
-  color: white;
+  color: white !important;
 }

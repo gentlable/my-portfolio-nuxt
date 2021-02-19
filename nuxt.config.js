@@ -52,8 +52,8 @@ export default {
   css: [
     { src: '~assets/scss/common.scss', lang: 'scss' },
     { src: '~assets/scss/reset.scss', lang: 'scss' },
-    { src: '~assets/scss/add.scss', lang: 'scss' },
-    { src: '~assets/scss/neumorphism.css', lang: 'scss' }
+    { src: '~assets/scss/add.scss', lang: 'scss' }
+    // { src: '~assets/scss/neumorphism.css', lang: 'scss' }
   ],
   /*
    ** Plugins to load before mounting the App

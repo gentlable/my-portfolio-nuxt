@@ -1,11 +1,25 @@
 <template>
   <div class="introduction row">
-    <div class="image col-4">
-      <img :src="image_url" alt="">
+    <div class="description col-6">
+      <div class="row">
+        <div class="label col">
+          {{ label1 }}
+        </div>
+        <div class="desc col">
+          {{ desc1 }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="label col">
+          {{ label2 }}
+        </div>
+        <div class="desc col">
+          {{ desc2 }}
+        </div>
+      </div>
     </div>
-    <div class="description col-8">
-      <p class="label">{{ label }}</p>
-      <p class="desc">{{ desc }}</p>
+    <div class="image col-6">
+      <img :src="image_url" alt="">
     </div>
   </div>
 </template>
@@ -17,11 +31,19 @@ export default {
       default: '',
       type: String
     },
-    label: {
+    label1: {
       default: '',
       type: String
     },
-      desc: {
+      desc1: {
+      default: '',
+      type: String
+    },
+    label2: {
+      default: '',
+      type: String
+    },
+      desc2: {
       default: '',
       type: String
     }
@@ -31,10 +53,9 @@ export default {
 
 <style lang="scss" scoped>
 .introduction {
-  font-size: 1rem;
   align-items: center;
   text-align: center;
-  height: 400px;
+  height: 60%;;
   .image {
     height: 80%;
     vertical-align: middle;
@@ -47,10 +68,27 @@ export default {
     }
   }
   .description {
-    margin-top: 1rem;
-    .desc {
-      white-space: pre-wrap;
+    font-size: 2.5rem;
+    font-family: "8bitFontEn";
+    .row {
+      margin: 20px;
+      margin-top: 0;
+      .label {
+        text-align: right;
+        height: fit-content;
+        padding-right: 20px
+      }
+      .desc {
+        text-align: left;
+        height: fit-content;
+      }
     }
   }
+}
+@media screen and (min-width: 768px) {
+  
+}
+@media screen and (max-width: 768px) {
+  
 }
 </style>

@@ -13,8 +13,8 @@ export default class ApplicantTab extends Vue {
 
 <style lang="scss" scoped>
 .hero {
+  width: fit-content;
   h1 {
-    color: white;
     font-family: '8bitFontEn';
     font-size: 4rem;
     align-items: center;
