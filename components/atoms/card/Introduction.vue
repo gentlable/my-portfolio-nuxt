@@ -8,17 +8,13 @@
         <div class="label col">
           {{ label1 }}
         </div>
-        <div class="desc col">
-          {{ desc1 }}
-        </div>
+        <div class="desc col">{{ desc1 }}</div>
       </div>
       <div class="row">
         <div class="label col">
           {{ label2 }}
         </div>
-        <div class="desc col">
-          {{ desc2 }}
-        </div>
+        <div class="desc col">{{ desc2 }}</div>
       </div>
     </div>
   </div>
@@ -82,6 +78,7 @@ export default {
       .desc {
         text-align: left;
         height: fit-content;
+        white-space: pre-line;
       }
     }
   }

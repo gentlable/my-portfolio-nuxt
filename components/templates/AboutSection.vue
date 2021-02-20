@@ -11,7 +11,8 @@
         label1="Name:"
         desc1="Go"
         label2="Skill:"
-        desc2="Nuxt Java"
+        desc2="Nuxt
+        Java"
       />
       <div class="window inside">
         <div class="message">
