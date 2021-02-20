@@ -104,15 +104,16 @@ export default {
 }
 @media screen and (max-width: 768px) {
 .introduction {
-  height: 63%;
+  display: block;
+  height: 60%;
   .image {
-    height: 50%;
+    height: 55%;
     img {
       height: 80%;
     }
   }
   .description {
-    font-size: 2rem;
+    font-size: 1.75rem;
     .row {
       margin: 0;
       .label {

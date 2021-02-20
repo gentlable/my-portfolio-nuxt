@@ -38,7 +38,7 @@ export default {
 @media screen and (max-width: 768px) {
 .section-title {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 }
 }

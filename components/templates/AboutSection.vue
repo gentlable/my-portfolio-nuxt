@@ -109,10 +109,10 @@ export default {
   .outside {
     width: 95%;
     height: 94%;
-    margin: 6% 2.5%;
+    margin: 3% 2.5%;
     .inside {
       width: 98%;
-      height: 30%;
+      height: 33%;
       margin: auto;
       .message {
         font-family: '8bitFontEn';
@@ -125,7 +125,7 @@ export default {
   .section-title {
   }
   .introduction {
-    width: 90%;
+    width: 100%;
     margin: auto;
     margin-top: 3rem;
     background: inherit;
