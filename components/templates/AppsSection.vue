@@ -1,24 +1,15 @@
 <template>
-  <div class="works-section bg-black">
-    <section-title title="Works" />
+  <div class="works-section">
+    <section-title title="Apps" />
     <div class="row">
       <work
         class="col"
-        :image_url="xfaceImg"
-        label="x-faCE HP"
-        link="https://eggsystem.co.jp/"
-        desc=
-          "Coding
-          Nuxt"
-      />
-      <work
-        class="col"
-        :image_url="renkohImg"
-        label="renkohsasaki HP"
-        link="https://renkohsasaki.com/"
+        :image_url="actionRecordImg"
+        label="ActionRecord"
+        link="https://actionrecord-55322.web.app/"
         desc=
           "Design Coding
-          Laravel"
+          Nuxt"
       />
     </div>
   </div>
@@ -28,20 +19,16 @@
 import SectionTitle from '~/components/atoms/text/SectionTitle.vue'
 import Description from '~/components/atoms/text/Description.vue'
 import Work from '~/components/atoms/card/Work.vue'
-import xfaceImg from '~/assets/img/works/x-face_logo.png'
-import renkohImg from '~/assets/img/works/renkohsasaki_asobi.png'
-
+import actionRecordImg from '~/assets/img/works/ActionRecord_title.png'
 
 export default {
   components: {
     SectionTitle,
-    Description,
     Work
   },
   data() {
     return {
-      xfaceImg: xfaceImg,
-      renkohImg: renkohImg
+      actionRecordImg: actionRecordImg
     }
   }
 }
