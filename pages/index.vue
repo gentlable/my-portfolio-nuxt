@@ -5,9 +5,7 @@
     -->
     <title-section />
     <about-section />
-    <!--
     <works-section />
-    -->
     <!--
     <contact-section />
     -->

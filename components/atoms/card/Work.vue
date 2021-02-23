@@ -1,7 +1,7 @@
 <template>
-  <div class="work card">
+  <div class="work">
     <div class="image">
-      <a :href="link">
+      <a :href="link" target="_blank">
         <img :src="image_url" alt="">
       </a>
     </div>
@@ -37,20 +37,56 @@ export default {
 
 <style lang="scss" scoped>
 .work {
-  font-size: 1rem;
   align-items: center;
   text-align: center;
   height: 400px;
   .image {
-    height: 80%;
+    height: 60%;
+    width: fit-content;
+    margin: auto;
     img {
+      border-radius: 60px;
       height: 100%;
       width: auto;
-      margin: auto;
     }
   }
   .description {
     margin-top: 1rem;
+    font-family: '8bitFontEn';
+    font-size: 1.5rem;
+    .desc {
+      white-space: pre-line;
+    }
   }
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (max-width: 768px) {
+.work {
+  align-items: center;
+  text-align: center;
+  height: 250px;
+  .image {
+    height: 50%;
+    width: fit-content;
+    margin: auto;
+    img {
+      border-radius: 40px;
+      height: 100%;
+      width: auto;
+    }
+  }
+  .description {
+    margin-top: 1rem;
+    font-family: '8bitFontEn';
+    font-size: 1.25rem;
+    .desc {
+      white-space: pre-line;
+    }
+  }
+}
 }
 </style>

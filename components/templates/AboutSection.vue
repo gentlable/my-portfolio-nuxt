@@ -2,17 +2,14 @@
   <div class="about-section">
     <section-title title="About" class="bg-white"/>
     <div class="window outside">
-      <!--
-      <description desc="Name: Go" class="col" />
-      <description desc="Skill: Nuxt.Js" class="col" />
-      -->
       <introduction
         :image_url="selfImg"
         label1="Name:"
         desc1="Go"
         label2="Skill:"
-        desc2="Nuxt
-        Java"
+        desc2=
+          "Nuxt
+          Java"
       />
       <div class="window inside">
         <div class="message">

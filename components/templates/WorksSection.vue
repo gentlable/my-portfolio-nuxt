@@ -1,30 +1,24 @@
 <template>
-  <div class="works-section">
-    <section-title title="WORKS" />
-    <description desc="制作の記録です。" />
+  <div class="works-section bg-black">
+    <section-title title="Works" />
     <div class="row">
       <work
         class="col"
         :image_url="xfaceImg"
-        label="株式会社エッグシステムHP製作"
+        label="x-faCE HP"
         link="https://eggsystem.co.jp/"
-        desc="コーディング"
+        desc=
+          "Coding
+          Nuxt"
       />
       <work
         class="col"
-        :image_url="connectImg"
-        label="マッチングサービスCONNECT製作"
-        link="https://connect-b90ab.uc.r.appspot.com/"
-        desc="デザイン・コーディング"
-      />
-    </div>
-    <div class="row">
-      <work
-        class="col"
-        :image_url="xfaceImg"
-        label="ActionRecord"
-        link="https://actionrecord-55322.web.app/"
-        desc="アプリ制作"
+        :image_url="renkohImg"
+        label="renkohsasaki HP"
+        link="https://renkohsasaki.com/"
+        desc=
+          "Design Coding
+          Laravel"
       />
     </div>
   </div>
@@ -34,8 +28,8 @@
 import SectionTitle from '~/components/atoms/text/SectionTitle.vue'
 import Description from '~/components/atoms/text/Description.vue'
 import Work from '~/components/atoms/card/Work.vue'
-import xfaceImg from '~/assets/img/works/top_pc.jpg'
-import connectImg from '~/assets/img/works/connect.png'
+import xfaceImg from '~/assets/img/works/x-face_logo.png'
+import renkohImg from '~/assets/img/works/renkohsasaki_asobi.png'
 
 
 export default {
@@ -47,7 +41,7 @@ export default {
   data() {
     return {
       xfaceImg: xfaceImg,
-      connectImg: connectImg
+      renkohImg: renkohImg
     }
   }
 }
@@ -55,14 +49,33 @@ export default {
 
 <style lang="scss" scoped>
 .works-section {
-  background: #e6e7ee;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
+  .section-title {
+    margin: 0 auto;
+  }
+  .row {
+    margin-top: 15vh;
+    height: 70vh;
+  }
 }
 
-.col {
-  margin: 3rem;
-  margin-top: 4rem;
+@media screen and (min-width: 768px) {
+
 }
+
+@media screen and (max-width: 768px) {
+.works-section {
+  .section-title {
+  }
+  .row {
+    flex-direction: column;
+    margin-top: 5vh;
+    height: 80vh;
+  }
+}
+
+}
+
 </style>
