@@ -22,7 +22,7 @@
           HP制作, VBAマクロ
           JS:  NuxtJS
           PHP: Wordpress, Laravel
-          DB: firebase, MySQL"
+          DB: FireBase, MySQL"
       />
     </div>
   </div>
