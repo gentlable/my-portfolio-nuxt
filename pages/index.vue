@@ -7,6 +7,7 @@
     <about-section />
     <works-section />
     <apps-section />
+    <carrer-section />
     <!--
     <contact-section />
     -->
@@ -18,9 +19,10 @@
 
 <script>
 import TitleSection from '~/components/templates/TitleSection.vue'
+import AboutSection from '~/components/templates/AboutSection.vue'
 import WorksSection from '~/components/templates/WorksSection.vue'
 import AppsSection from '~/components/templates/AppsSection.vue'
-import AboutSection from '~/components/templates/AboutSection.vue'
+import CarrerSection from '~/components/templates/CarrerSection.vue'
 import TestSection from '~/components/templates/TestSection.vue'
 import axios from 'axios'
 
@@ -30,6 +32,7 @@ export default {
     AboutSection,
     WorksSection,
     AppsSection,
+    CarrerSection,
     TestSection
   }
 }
