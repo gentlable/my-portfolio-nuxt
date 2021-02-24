@@ -26,6 +26,7 @@ export default {
   text-align: center;
   .desc1 {
     white-space: pre-line;
+    font-size: 1.5rem;
   }
   .desc2 {
     white-space: pre-line;
