@@ -17,9 +17,8 @@
         class="col col-reverse"
         desc1="side job"
         desc2=
-          "複業
+          "HP制作, VBAマクロ開発
 
-          HP制作, VBAマクロ
           JS:  NuxtJS
           PHP: Wordpress, Laravel
           DB: FireBase, MySQL"
