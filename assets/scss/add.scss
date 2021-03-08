@@ -21,6 +21,7 @@
   > * {
     background-color: white;
     color: black !important;
+    border-color: black;
   }
 }
 
@@ -30,5 +31,11 @@
   > * {
     background-color: black;
     color: white !important;
+    border-color: white;
   }
+}
+
+.window {
+  border-radius: 5px;
+  border: black 5px solid;
 }
