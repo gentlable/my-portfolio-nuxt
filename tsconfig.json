@@ -4,6 +4,8 @@
     "module": "esnext",
     "moduleResolution": "node",
     "lib": [
+      "es5",
+      "scripthost",
       "esnext",
       "esnext.asynciterable",
       "dom"

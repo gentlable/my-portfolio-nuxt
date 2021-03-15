@@ -10,8 +10,8 @@ export default {
     microCmsApiKey,
     microCmsApiDomain
   },
-  mode: 'universal',
-//  mode: 'spa',
+  // mode: 'universal',
+  mode: 'spa',
   /*
    ** Headers of the page
    */
