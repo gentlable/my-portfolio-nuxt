@@ -4,23 +4,39 @@
       <img class="image" src="/img/self-min.jpg" alt="">
     </div>
     <div ref="messageWindow" class="message-window">
-      <div ref="message" v-if="windowStatus=='message'" class="message">
+      <div ref="message" v-show="windowStatus=='message'" class="message">
         message
       </div>
-      <div ref="fight" v-if="windowStatus=='fight'" class="message">
-        fignt
+      <div ref="fight" v-show="windowStatus=='fight'" class="message">
+        <div class="target choices" @click="attack">
+          <span>* </span>
+          <span>Go</span>
+        </div>
       </div>
-      <div ref="act" v-if="windowStatus=='act'" class="message">
-        act
+      <div ref="act" v-show="windowStatus=='act'" class="message">
+        <div class="action choices" @click="attack">
+          <span>* </span>
+          <span>はなす</span>
+        </div>
+        <div class="action choices" @click="attack">
+          <span>* </span>
+          <span>たのむ</span>
+        </div>
       </div>
-      <div ref="item" v-if="windowStatus=='item'" class="message">
-        item
+      <div ref="item" v-show="windowStatus=='item'" class="message">
+        <div class="item choices" @click="attack">
+          <span>* </span>
+          <span>コントローラー</span>
+        </div>
       </div>
-      <div ref="mercy" v-if="windowStatus=='mercy'" class="message">
-        mercy
+      <div ref="mercy" v-show="windowStatus=='mercy'" class="message">
+        <div class="target choices" @click="attack">
+          <span>* </span>
+          <span>にがす</span>
+        </div>
       </div>
     </div>
-    <div class="button-container">
+    <div class="command-container">
       <button @click="command('fight')">
         たたかう
       </button>
@@ -41,54 +57,74 @@
 // 敵イメージ
 let image = null
 // メッセージウィンドウ
-let messageWindow = null 
+let messageWindow = null
 
 // 画像を揺らす
 function shakeImage() {
-  let amplitude = 16
-  const interval =  setInterval(() => {
-    if(amplitude < 0) {
-      amplitude += 2
-    } else if (amplitude > 0){
-      amplitude -= 2
-    } else {
-      clearInterval(interval)
-    }
-    amplitude = -amplitude
-    image.style.left = amplitude + "px"
-  }, 100)
+  return new Promise(resolve => {
+    let amplitude = 16
+    const interval =  setInterval(() => {
+      if(amplitude < 0) {
+        amplitude += 2
+      } else if (amplitude > 0){
+        amplitude -= 2
+      } else {
+        clearInterval(interval)
+        resolve()
+      }
+      amplitude = -amplitude
+      image.style.left = amplitude + "px"
+    }, 100)
+  })
 }
 
 // メッセージウィンドウの幅を変更
-function windowWidthChange(width) {
-  const offsetWidth = messageWindow.offsetWidth
-  let tmpWidth = offsetWidth
-  const interval = setInterval(() => {
-      messageWindow.style.width = tmpWidth + 'px'
-    if (width < offsetWidth && width < tmpWidth) {
-      tmpWidth -= 20
-    } else if (offsetWidth < width && tmpWidth < width) {
-      tmpWidth += 20
-    } else {
-      clearInterval(interval)
-    }
-  }, 25)
+async function windowWidthChange(width) {
+  return new Promise((resolve) => {
+    const offsetWidth = messageWindow.offsetWidth
+    let tmpWidth = offsetWidth
+    const interval = setInterval(() => {
+        messageWindow.style.width = tmpWidth + 'px'
+      if (width < offsetWidth && width < tmpWidth) {
+        tmpWidth -= 20
+      } else if (offsetWidth < width && tmpWidth < width) {
+        tmpWidth += 20
+      } else {
+        clearInterval(interval)
+        resolve()
+      }
+    }, 25)
+  })
 }
+
 // メッセージウィンドウの高さを変更
-function windowHeightChange(height) {
-  const offsetHeight = messageWindow.offsetHeight
-  let tmpHeight = offsetHeight
-  const interval = setInterval(() => {
-      messageWindow.style.height = tmpHeight + 'px'
-    if (height < offsetHeight && height < tmpHeight) {
-      tmpHeight -= 20
-    } else if (offsetHeight < height && tmpHeight < height) {
-      tmpHeight += 20
-    } else {
-      clearInterval(interval)
-    }
-  }, 25)
+async function windowHeightChange(height) {
+  return new Promise((resolve) => {
+    const offsetHeight = messageWindow.offsetHeight
+    let tmpHeight = offsetHeight
+    const interval = setInterval(() => {
+        messageWindow.style.height = tmpHeight + 'px'
+      if (height < offsetHeight && height < tmpHeight) {
+        tmpHeight -= 20
+      } else if (offsetHeight < height && tmpHeight < height) {
+        tmpHeight += 20
+      } else {
+        clearInterval(interval)
+        resolve()
+      }
+    }, 25)
+  })
 }
+
+// 敵の攻撃
+async function enemyAttack() {
+  await windowWidthChange(300)
+  await windowHeightChange(250)
+  await new Promise(resolve => setTimeout(resolve, 3000))
+  await windowHeightChange(200)
+  await windowWidthChange(600)
+}
+
 export default {
   mounted() {
     image =  this.$refs.image
@@ -104,21 +140,14 @@ export default {
         mercy: '',
         message: '',
       },
-      windowStatus: 'message'
+      windowStatus: 'message',
+      goLife: 10,
+      life: 20
     }
   },
   methods: {
     command(command) {
       this.windowStatus = command
-      // if (command === 'fight') {
-      //   this.windowStatus = 
-      // } else if (command === 'act') {
-
-      // } else if (command === 'item') {
-
-      // } else if (command === 'mercy') {
-
-      // }
     },
     selectTarget() {
 
@@ -132,8 +161,11 @@ export default {
     selectMercy() {
 
     },
-    attack() {
-      shakeImage()
+    async attack() {
+      this.windowStatus = ''
+      await shakeImage()
+      await enemyAttack()
+      this.windowStatus = 'message'
     },
     attackWindow() {
       windowWidthChange(800)
@@ -171,16 +203,28 @@ export default {
     position: absolute;
     bottom: 140px;
     border: 7px solid white;
-    width: 800px;
+    width: 600px;
     height: 200px;
     z-index: 10;
+    padding: 5px 10px;
     .message {
       color: white;
       font-family: '8bitFontEn';
       font-size: 24px;
+      .choices {
+        position: relative;
+        margin-left: 40px;
+        &:hover {
+          &::before {
+            content: url(/game/icon/heart_icon.png);
+            position: absolute;
+            left: -40px; 
+          }
+        }
+      }
     }
   }
-  .button-container {
+  .command-container {
     position: absolute;
     bottom: 50px;
   }
