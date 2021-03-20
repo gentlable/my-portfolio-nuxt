@@ -14,41 +14,48 @@
         </div>
       </div>
       <div ref="act" v-show="windowStatus=='act'" class="message">
-        <div class="action choices" @click="attack">
+        <div class="action choices" @click="action('talk')">
           <span>* </span>
           <span>はなす</span>
         </div>
-        <div class="action choices" @click="attack">
+        <div class="action choices" @click="action('ask')">
           <span>* </span>
           <span>たのむ</span>
         </div>
       </div>
       <div ref="item" v-show="windowStatus=='item'" class="message">
-        <div class="item choices" @click="attack">
+        <div class="item choices" @click="item('controler')">
           <span>* </span>
           <span>コントローラー</span>
         </div>
       </div>
       <div ref="mercy" v-show="windowStatus=='mercy'" class="message">
-        <div class="target choices" @click="attack">
+        <div class="target choices" @click="mercy('mercy')">
           <span>* </span>
           <span>にがす</span>
         </div>
+        <div class="target choices" @click="mercy('escape')">
+          <span>* </span>
+          <span>にげる</span>
+        </div>
       </div>
     </div>
+    <div class="status">
+      
+    </div>
     <div class="command-container">
-      <button @click="command('fight')">
+      <div class="command" @click="command('fight')">
         たたかう
-      </button>
-      <button @click="command('act')">
+      </div>
+      <div class="command" @click="command('act')">
         こうどう
-      </button>
-      <button @click="command('item')">
+      </div>
+      <div class="command" @click="command('item')">
         アイテム
-      </button>
-      <button @click="command('mercy')">
+      </div>
+      <div class="command" @click="command('mercy')">
         みのがす
-      </button>
+      </div>
     </div>
   </div>
 </template>
@@ -149,35 +156,20 @@ export default {
     command(command) {
       this.windowStatus = command
     },
-    selectTarget() {
-
-    },
-    selectAction() {
-
-    },
-    selectItem() {
-
-    },
-    selectMercy() {
-
-    },
     async attack() {
       this.windowStatus = ''
       await shakeImage()
       await enemyAttack()
       this.windowStatus = 'message'
     },
-    attackWindow() {
-      windowWidthChange(800)
-      windowHeightChange(200)
+    async action(str) {
+
     },
-    defaultWindow() {
-      windowWidthChange(600)
-      windowHeightChange(200)
+    async item(str) {
+
     },
-    shootingWindow() {
-      windowWidthChange(300)
-      windowHeightChange(300)
+    async mercy(str) {
+
     },
   }
 }
@@ -227,6 +219,13 @@ export default {
   .command-container {
     position: absolute;
     bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    .command {
+      border: 5px solid white;
+      color: white;
+    }
   }
 }
 </style>
