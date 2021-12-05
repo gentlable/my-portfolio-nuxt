@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/home"
+  from = "/test"
   to = "https://52u.pw"
   status = 200
   force = true
