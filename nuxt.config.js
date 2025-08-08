@@ -6,16 +6,18 @@ import webpack from 'webpack'
 
 
 export default {
+  target: 'static',
   env: {
     microCmsApiKey,
     microCmsApiDomain
   },
-  // mode: 'universal',
-  mode: 'spa',
+  // Nuxt 2: use ssr flag instead of deprecated mode
+  ssr: false,
   /*
    ** Headers of the page
    */
   head: {
+    base: { href: process.env.ROUTER_BASE || '/' },
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },

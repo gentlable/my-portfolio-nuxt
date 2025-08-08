@@ -24,11 +24,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Detect router base
+        id: base
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          if [ "$REPO_NAME" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then
+            echo "base=/" >> $GITHUB_OUTPUT
+          else
+            echo "base=/$REPO_NAME/" >> $GITHUB_OUTPUT
+          fi
+
       - name: Generate static site
         env:
-          # Set router base to repository name for GitHub Pages (user/project pages)
-          ROUTER_BASE: ${{ github.repository_owner == github.event.repository.name && '/' || format('/{0}/', github.event.repository.name) }}
-          # If you need microCMS keys, add them as secrets and export here
+          ROUTER_BASE: ${{ steps.base.outputs.base }}
           microCmsApiKey: ${{ secrets.MICROCMS_API_KEY }}
           microCmsApiDomain: ${{ secrets.MICROCMS_API_DOMAIN }}
         run: npm run generate
