@@ -1,9 +1,6 @@
-const gtagSrc = 'https://www.googletagmanager.com/gtag/js?id=UA-165351964-2'
-const gtagJS = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-165351964-2');`
-const { microCmsApiKey, microCmsApiDomain } = process.env
-import { routing } from './lib/cms'
 import webpack from 'webpack'
 
+const { microCmsApiKey, microCmsApiDomain } = process.env
 
 export default {
   target: 'static',
@@ -60,8 +57,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-  ],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
@@ -96,7 +92,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
+    extend(config) {
       config.node = {
         fs: 'empty'
       }
