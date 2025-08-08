@@ -1,7 +1,7 @@
 <template>
   <div class="test">
     <div ref="image" class="move">
-      <img class="image" src="img/self-min.jpg" alt="">
+      <img class="image" src="/img/self-min.jpg" alt="">
     </div>
     <div ref="messageWindow" class="message-window">
       <div ref="message" v-show="windowStatus=='message'" class="message">
@@ -208,7 +208,7 @@ export default {
         margin-left: 40px;
         &:hover {
           &::before {
-            content: url(game/icon/heart_icon.png);
+            content: url('/game/icon/heart_icon.png');
             position: absolute;
             left: -40px; 
           }

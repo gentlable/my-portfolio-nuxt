@@ -20,7 +20,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("img/firstview_edited-min.png");
+  background-image: url("/img/firstview_edited-min.png");
   background-repeat: no-repeat;
   background-size: cover;
   .hero {
