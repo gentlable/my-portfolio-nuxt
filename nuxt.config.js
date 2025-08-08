@@ -27,7 +27,7 @@ export default {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: (process.env.ROUTER_BASE || '/') + 'favicon.ico' }
     ],
     script: [
       // {
@@ -104,6 +104,13 @@ export default {
         $: 'jquery'
       })
     ]
+  },
+  router: {
+    base: process.env.ROUTER_BASE || '/'
+  },
+  generate: {
+    // SPA fallback for GitHub Pages (serves 404.html)
+    fallback: true
   },
   googleAnalytics: {
     id: 'UA-165351964-2'
