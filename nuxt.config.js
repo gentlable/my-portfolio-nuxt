@@ -63,9 +63,7 @@ export default {
    */
   buildModules: [
     '@nuxt/postcss8',
-    '@nuxt/typescript-build',
-    // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    '@nuxt/typescript-build'
   ],
   /*
    ** Nuxt.js modules
@@ -95,18 +93,9 @@ export default {
     transpile: [
       'vue-p5'
     ],
-    extend(config, { isDev, isClient }) {
+    extend(config) {
       config.node = {
         fs: 'empty'
-      }
-      // vue-loaderの設定を明示的に指定
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
       }
     },
     plugins: [
