@@ -92,9 +92,21 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config) {
+    transpile: [
+      'vue-p5'
+    ],
+    extend(config, { isDev, isClient }) {
       config.node = {
         fs: 'empty'
+      }
+      // vue-loaderの設定を明示的に指定
+      if (isDev && isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
       }
     },
     plugins: [
